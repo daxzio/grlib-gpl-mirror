@@ -1022,6 +1022,10 @@
 #define CONFIG_GRETH_FMC_MODE 0
 #endif
 
+#ifndef CONFIG_GRETH_PHY_ADDR
+#define CONFIG_GRETH_PHY_ADDR 1
+#endif
+
 #ifndef CONFIG_UART1_ENABLE
 #define CONFIG_UART1_ENABLE 0
 #endif

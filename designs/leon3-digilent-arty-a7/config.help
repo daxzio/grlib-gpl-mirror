@@ -939,6 +939,9 @@ CONFIG_GRETH_FT
 CONFIG_GRETH_EDCLFT
   Enable protection for EDCL buffer. This is typically not used as
   the EDCL debug link is not used in harsh environments.
+
+CONFIG_GRETH_PHY_ADDR
+  Default PHY address
 UART1 enable
 CONFIG_UART1_ENABLE
   Say Y here to enable UART1, or the console UART. This is needed to

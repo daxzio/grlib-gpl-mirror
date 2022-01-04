@@ -4028,6 +4028,7 @@ proc menu18 {w title} {
 	$w.config.f.x2.x.menu add radiobutton -label "64" -variable tmpvar_33 -value "64" -command "update_active"
 	menusplit $w $w.config.f.x2.x.menu 5
 	bool $w.config.f 18 3 "Enable FMC" CONFIG_GRETH_FMC_MODE
+	int $w.config.f 18 4 "PHY address  " CONFIG_GRETH_PHY_ADDR
 
 
 
@@ -4073,6 +4074,8 @@ proc update_menu18 {} {
 	global CONFIG_GRETH_FMC_MODE
 	if {($CONFIG_GRETH_ENABLE == 1)} then {
 	configure_entry .menu18.config.f.x3 normal {n l y}} else {configure_entry .menu18.config.f.x3 disabled {y n l}}
+	global CONFIG_GRETH_PHY_ADDR
+	if {($CONFIG_GRETH_ENABLE == 1)} then {.menu18.config.f.x4.x configure -state normal -foreground [ cget .ref -foreground ]; .menu18.config.f.x4.l configure -state normal; } else {.menu18.config.f.x4.x configure -state disabled -foreground [ cget .ref -disabledforeground ]; .menu18.config.f.x4.l configure -state disabled}
 }
 
 
@@ -4097,6 +4100,8 @@ proc update_define_menu18 {} {
 	global CONFIG_GRETH_FMC_MODE
 	if {($CONFIG_GRETH_ENABLE == 1)} then {
 	set CONFIG_GRETH_FMC_MODE [expr $CONFIG_GRETH_FMC_MODE&15]} else {set CONFIG_GRETH_FMC_MODE [expr $CONFIG_GRETH_FMC_MODE|16]}
+	global CONFIG_GRETH_PHY_ADDR
+	if {($CONFIG_GRETH_ENABLE == 1)} then {validate_int CONFIG_GRETH_PHY_ADDR "$CONFIG_GRETH_PHY_ADDR" 1}
 }
 
 
@@ -5012,6 +5017,7 @@ set CONFIG_GRETH_FIFO16 0
 set CONFIG_GRETH_FIFO32 0
 set CONFIG_GRETH_FIFO64 0
 set CONFIG_GRETH_FMC_MODE 0
+set CONFIG_GRETH_PHY_ADDR 1
 set CONFIG_UART1_ENABLE 0
 set tmpvar_34 "(not set)"
 set CONFIG_UA1_FIFO1 0
@@ -5761,6 +5767,8 @@ proc writeconfig {file1 file2} {
 	if { $tmpvar_33 == "64" } then { write_tristate $cfg $autocfg CONFIG_GRETH_FIFO64 1 [list $notmod] 2 } else { write_tristate $cfg $autocfg CONFIG_GRETH_FIFO64 0 [list $notmod] 2 }}
 	global CONFIG_GRETH_FMC_MODE
 	if {($CONFIG_GRETH_ENABLE == 1)} then {write_tristate $cfg $autocfg CONFIG_GRETH_FMC_MODE $CONFIG_GRETH_FMC_MODE [list $notmod] 2 }
+	global CONFIG_GRETH_PHY_ADDR
+	if {($CONFIG_GRETH_ENABLE == 1)} then {write_int $cfg $autocfg CONFIG_GRETH_PHY_ADDR $CONFIG_GRETH_PHY_ADDR $notmod }
 	write_comment $cfg $autocfg "UARTs, timers and irq control         "
 	global CONFIG_UART1_ENABLE
 	write_tristate $cfg $autocfg CONFIG_UART1_ENABLE $CONFIG_UART1_ENABLE [list $notmod] 2

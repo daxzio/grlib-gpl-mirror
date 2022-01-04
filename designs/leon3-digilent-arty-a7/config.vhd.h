@@ -147,6 +147,7 @@
   constant CFG_GRETH_FT     : integer := CONFIG_GRETH_FT;
   constant CFG_GRETH_EDCLFT : integer := CONFIG_GRETH_EDCLFT;
 #endif
+  constant CFG_ETH_PHY_ADDR : integer := CONFIG_GRETH_PHY_ADDR;
 -- UART 1
   constant CFG_UART1_ENABLE : integer := CONFIG_UART1_ENABLE;
   constant CFG_UART1_FIFO   : integer := CFG_UA1_FIFO;

@@ -60,8 +60,8 @@
 #undef  CONFIG_SYN_INFER_PADS
 #undef  CONFIG_SYN_NO_ASYNC
 #undef  CONFIG_SYN_SCAN
-#undef  CONFIG_FPGA_A100
-#define CONFIG_FPGA_A35 1
+#define CONFIG_FPGA_A100 1
+#undef  CONFIG_FPGA_A35
 /*
  * Clock generation
  */
@@ -271,6 +271,7 @@
 #undef  CONFIG_GRETH_FIFO32
 #undef  CONFIG_GRETH_FIFO64
 #undef  CONFIG_GRETH_FMC_MODE
+#define CONFIG_GRETH_PHY_ADDR (1)
 /*
  * UARTs, timers and irq control         
  */

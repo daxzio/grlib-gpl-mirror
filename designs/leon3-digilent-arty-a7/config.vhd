@@ -136,6 +136,7 @@ package config is
   constant CFG_GRETH1G : integer := 0;
   constant CFG_ETH_FIFO : integer := 8;
   constant CFG_GRETH_FMC : integer := 0;
+  constant CFG_ETH_PHY_ADDR : integer := (1);
 -- UART 1
   constant CFG_UART1_ENABLE : integer := 1;
   constant CFG_UART1_FIFO : integer := 32;
