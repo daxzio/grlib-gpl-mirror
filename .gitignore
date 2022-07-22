@@ -1,3 +1,9 @@
 *cache/
 *hw/
 *runs/
+Xil/
+vivado.jou
+vivado.log
+scriptgenwork/
+ip_upgrade.log
+vcs_libs
