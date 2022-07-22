@@ -2821,7 +2821,6 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../boards/digilent-arty-a7/Arty-XC7A100TI.xdc"/>
           <Attr Name="ImportTime" Val="1658482174"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
@@ -2835,7 +2834,6 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../boards/digilent-arty-a7/mig-XC7A100TI/mig-XC7A100TI.xdc"/>
           <Attr Name="ImportTime" Val="1658480617"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
